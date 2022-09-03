@@ -10,7 +10,6 @@ bin:指令（go/godoc/gofmt)
 
 src:源代码
 
-![image-20220514153626760](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220514153626760.png)
 
 # 环境变量
 
@@ -283,31 +282,17 @@ Go的字符串不同，它是由字节组成的
 
 2，go中字符串一旦赋值，是不可变的
 
-![image-20220426130623990](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220426130623990.png)
-
 3，字符串两种表示形式
 
 1）双引号，会识别转义字符
 
 2）反引号，以字符串的原生形式输出，包括换行和特殊字符，可以实现防止攻击，输出源代码等效果
 
-![image-20220426131837222](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220426131837222.png)
-
 反引号就是esc下面的键 ``
 
 4,字符串的拼接方式
 
-![image-20220426133003320](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220426133003320.png)
-
-
-
-
-
 在字符串中，换行符、制表符和其他难以包含在程序代码中的字符可以用转义序列来表示：反斜杠后跟表示另一个字符的字符。
-
-
-
-
 
 escape char：
 
@@ -404,11 +389,6 @@ strings.Title函数将字符串转化为首字母大写
 Go是静态类型的，这意味着它甚至在程序运行之前就知道值的类型是什么。函数期望它们的参数具有特定的类型，它们的返回值也具有类型
 
 你可以通过将任何值传递给reflect包的TypeOf函数，来查看它们的类型
-
-![image-20220405002505275](C:\Users\DARLING\AppData\Roaming\Typora\typora-user-images\image-20220405002505275.png)
-
-
-
 int 整型。保存数字
 
 float64   浮点数。保存带小数部分的数字（类型名中的64是因为要用64位的数据来保存浮点数。保存带小数部分的数字（类型名中的64是因为要用64位的数据来保存
@@ -558,10 +538,6 @@ fmt.Println(mylnt, myFloat)
 
 但是对于其他类型来说，0值是无效的，因此该类型的零值可能是其他值，比如字符串变量的零值是空字符串，布尔变量的零值是false。
 
-![image-20220426133130897](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220426133130897.png)
-
-![image-20220426134011591](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220426134011591.png)
-
 ###### 短变量声明 
 
 如果你声明变量时就知道它的初始值是什么，那么更具有代表性的是使用短变量声明。你不必很明确地声明变量的类型并在之后使用=为其赋值，而是同时使用：=
@@ -627,9 +603,6 @@ v就是要转换的变量
 2)被转换的是变量存储的数据(即值)，变量本身的数据类型并没有变化!
 3)在转换中，比如将int64转成int8，编译时不会报错，只是转换的结果是按溢出处理，和我们希望的结果不一样。
 
-<img src="C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220426144600030.png" alt="image-20220426144600030" style="zoom: 200%;" />
-
-
 
 ```go
 package main
@@ -676,16 +649,8 @@ func main(){
 
 2，fmt.Sprintf（）后返回转换后的字符串
 
-![image-20220426153915741](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220426153915741.png)
-
-<img src="C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220426155626857.png" alt="image-20220426155626857" style="zoom:200%;" />
 
 方法2，使用strconv包的函数
-
-![image-20220426155953374](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220426155953374.png)
-
-![image-20220426161633497](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220426161633497.png)
-
 ```go
 package main
 
@@ -739,8 +704,6 @@ func main() {
 #### string转基本数据类型
 
 1）使用strconv包的函数
-
-![image-20220426161522649](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220426161522649.png)
 
 ```go
 package main
@@ -797,16 +760,6 @@ var str4 string = "hello"
 	fmt.Printf("n3 type %T  n3=%v\n", n3, n3)//如果没有转成功，n3为默认值
 ```
 
-
-
-
-
-
-
-
-
-
-
 ### 复杂数据类型
 
 ##### 指针
@@ -817,31 +770,15 @@ var str4 string = "hello"
 
 2，获取变量的地址，用&，  比如var num int ,获取num的地址，&num
 
-![image-20220427171854297](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220427171854297.png)
-
 分析基本数据类型在内存的布局
-
-![image-20220427171944566](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220427171944566.png)
 
 3,指针类型，指针变量存的是一个地址，这个地址指向的空间存的才是值
 
 var **ptr** *int = &num
 
-![image-20220427172937224](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220427172937224.png)
-
-
-
 4，获取指针类型所指向的值，使用： * ，比如 var ptr  *int,.
 
 使用*ptr 获取 ptr指向的值
-
-![image-20220427173913687](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220427173913687.png)
-
-
-
-![image-20220428142726182](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220428142726182.png)
-
-
 
 **指针的使用细节**
 
@@ -856,19 +793,10 @@ var **ptr** *int = &num
 
 值类型：变量直接存储值，内存通常在栈中分配
 
-![image-20220428144456582](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220428144456582.png)
 
   2，引用类型，指针，slice切片，map，管道chan, interface
 
 引用类型:变量存储的是一个地址，这个地址对应的空间才真正存储数据(值)，内存通常在堆上分配，当没有任何变量引用这个地址时，该地址对应的数据空间就成为一个垃圾，由GC来回收。
-
-![image-20220428145011016](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220428145011016.png)
-
-
-
-![image-20220428145247950](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220428145247950.png)
-
-
 
 # 字符
 
@@ -895,9 +823,6 @@ var **ptr** *int = &num
 6)不能以系统保留关键字作为标识符，比如 break，if 等等...
 
 
-
-
-
 标识符命名事项
 
 1)包名:保持package的名字和目录保持一致，尽量采取有意义的包名，简短，有意义,
@@ -911,12 +836,6 @@ var **ptr** *int = &num
 
 
 保留关键字和预定义标识符
-
-![image-20220428183540838](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220428183540838.png)
-
-![image-20220430131648862](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220430131648862.png)
-
-
 
 ### 运算符
 
@@ -941,7 +860,6 @@ var **ptr** *int = &num
 
 算数运算符是对数值类型的变量进行运算的，比如，加减乘除
 
-![image-20220430132815829](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220430132815829.png)
 
 使用案例：
 
@@ -971,16 +889,7 @@ var **ptr** *int = &num
 **细节说明：**
 
 1）Golang的自增自减只能当作一个独立语言使用，不能这样使用：  <u>*b := a++或者 b := a--*</u>，即++和-只能独立使用
-
-![image-20220430140125594](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220430140125594.png)
-
 2）Golang的++和--只能学在变量后面，不能写在变量的前面，即，只有 a++,a--，没有 ++a,--a
-
-![image-20220430140716878](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220430140716878.png)
-
-
-
-
 
 ##### 关系运算符（比较运算符）
 
@@ -992,15 +901,10 @@ var **ptr** *int = &num
 
 4）比较运算符 “ ==” 不能写成 ''=''
 
-![image-20220430143227114](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220430143227114.png)
-
-
-
 ##### 逻辑运算符
 
 用于连接多个条件（一般来说就是关系表达式），最终结果也是bool值
 
-![image-20220430143734810](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220430143734810.png)
 
 ```go
  package main
@@ -1080,9 +984,6 @@ var **ptr** *int = &num
 %= : 求余后再赋值|C%=A等于c=C %A
 
 
-
-![image-20220430150701157](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220430150701157.png)
-
 说明：
 
 1）赋值运算的执行顺序是从右向左进行
@@ -1093,13 +994,9 @@ var **ptr** *int = &num
 
 ##### 位运算符
 
-![image-20220430160457044](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220430160457044.png)
 
 ##### 其他运算符
 
-
-
-![image-20220430160614483](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220430160614483.png)
 
 ```go
  package main
@@ -1131,12 +1028,6 @@ var **ptr** *int = &num
 
 #### 运算符优先级
 
-![image-20220430155954051](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220430155954051.png)
-
-
-
-
-
 # 获取用户终端输入（键盘输入语句）
 
 介绍：在编程中，需要接收用户输入的数据，可以使用键盘输入语句来获取
@@ -1148,8 +1039,6 @@ var **ptr** *int = &num
 1）导入fmt包
 
 2）调用fmt包的fmt.Scanln() 或者 fmt.Scanf()
-
-![image-20220501225118375](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220501225118375.png)
 
 ```go
 package main
@@ -1284,13 +1173,7 @@ func main() {
 
 程序从上到下逐步执行，中间没有任何判断和跳转，因此程序按照默认的流程执行
 
- ![image-20220503134839382](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220503134839382.png)
-
 Golang中定义变量时采用合法的前向引用
-
-![image-20220503135045148](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220503135045148.png)
-
-
 
 ### 分支控制
 
@@ -1468,12 +1351,6 @@ if 条件表达式{
 
 2）匹配项后面也不需要再加break
 
-![image-20220503150338779](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220503150338779.png)
-
-
-
-![image-20220503150635552](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220503150635552.png)
-
 上图说明和总结
 
 1）switch的执行的流程是，先执行表达式，得到值，然后和case的表达式进行比较，如果相等，就匹配到，然后执行对应的case的语句块2，然后退出switch控制
@@ -1524,8 +1401,7 @@ func main() {
    	}
    ```
 
-   
-
+ 
 3. case后面可以带多个表达式，使用逗号间隔。比如case表达式1,表达式2 ...
 
 4. case后面的表达式如果是常量值(字面量)，则要求不能重复
@@ -1538,7 +1414,6 @@ func main() {
 
 8.  switch后也可以直接声明/定义一个变量，分号结束，不推荐。
 
-   ![image-20220503154943019](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220503154943019.png)
 
 9. switch穿透-fallthrough，如果在case语句块后增加fallthrough ,则会继续执行下一个case,也叫switch穿透。
 
@@ -1659,7 +1534,6 @@ for{
 
 4，Golang 提供for-range的方式，可以方便遍历字符串和数组(注:数组的遍历，我们放到讲数组的时候再讲解)，案例说明如何遍历字符串。
 
-![image-20220504144956408](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220504144956408.png)
 
 ```go
 package main
@@ -1695,11 +1569,6 @@ var str string = "hello,world!哈哈"
 ```
 
 而for-range 有汉字也行
-
-![image-20220504151908356](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220504151908356.png)
-
-![image-20220504151913939](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220504151913939.png)
-
 
 
 ##### while和do...while的实现
@@ -1875,9 +1744,6 @@ break终止整个循环
 分析:编写一个无限循环的控制，然后不停的随机生成数，当生成了99时，就退出这个无限循环==break提示使用
 这里我们给大家说一下，如下随机生成1-100整数.
 
-![image-20220508170129816](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220508170129816.png)
-
-
 
 ```go
 var count int = 0
@@ -1939,10 +1805,6 @@ continue 终止本次循环
 1，continue语句用于结束本次循环，继续执行下一次循环
 
 2，continue语句出现在多次嵌套的循环语句体中时，可以通过标签指明要跳过的是哪一层循环
-
-![image-20220511201443100](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220511201443100.png)
-
-
 
 ##### goto
 
@@ -2014,8 +1876,6 @@ func 函数名（形参列表)(返回值列表) {
 ##### 包的引出和使用原理
 
 包的本质实际上就是创建不同的文件夹，来存放程序文件
-
-![image-20220514131647410](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220514131647410.png)
 
 包的基本概念：go的每一个文件都是属于一个包的，也就是说 go是以包的形式来管理文件和项目目录结构的
 
@@ -2089,9 +1949,6 @@ func main() {
 	fmt.Println("main's n1=", n1) //10
 }
 ```
-
-![image-20220516142547331](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220516142547331.png)
-
 1，在调用一个函数时，会给该函数分配一个新的空间，编译器会通过自身的处理让这个新的空间和其他的栈的空间区分开来
 
 2，在每个函数对应的栈中，数据空间是独立的，不会混淆
@@ -2223,7 +2080,6 @@ func main() {
 }
 ```
 
-![image-20220519200431053](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220519200431053.png)
 
 7，Go函数不支持重载
 
@@ -2298,9 +2154,7 @@ func main() {
 
 12，使用 _ 标识符，忽略返回值
 
-![image-20220519222924648](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220519222924648.png)
-
-13，Go支持可变参数![image-20220519223052975](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220519223052975.png)
+13，Go支持可变参数
 
 （3），如果一个函数的形参列表中有可变参数，则可变参数变量需要放在形参列表最后
 
@@ -2321,8 +2175,6 @@ func main() {
 	fmt.Println("main()...")
 }
 ```
-
-![image-20220520143207486](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220520143207486.png)
 
 细节讨论:
 
@@ -2353,10 +2205,6 @@ main()...age= 90
 ```
 
 2，init函数最主要的作用就是完成一些初始化的工作
-
-![image-20220520144849414](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220520144849414.png)
-
-
 
 ##### 匿名函数
 
@@ -2428,7 +2276,6 @@ func main() {
 
 2,  闭包的说明
 
-![](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220520151638683.png)
 
   返回的是一个匿名函数，但是这个匿名函数引用到函数外的n,因此这个匿名函数和n形成一个整体，构成闭包
 
@@ -2567,17 +2414,12 @@ func test(){
 2)引用传递 （指针 slice切片 map 管道chan interface )
 其实，不管是值传递还是引用传递，传递给函数的都是变量的副本，不同的是，值传递的是值的拷贝，引用传递的是地址的拷贝，一般来说，地址拷贝效率高，因为数据量小，而值拷贝决定拷贝的数据大小，数据越大，效率越低。
 
- ![image-20220522134509036](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220522134509036.png)
-
-
 
 ##### 变量作用域
 
 说明：
 
 1，函数内部声明/定义的变量叫做局部变量，作用域仅限于函数内部
-
-![image-20220522135758798](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220522135758798.png)
 
 2，函数外部声明/定义的变量叫做全局变量，作用域在整个包都有效，如果其首字母为大写，则作用域在整个程序有效
 
@@ -2608,14 +2450,6 @@ Name= tom~
 ```
 
 3，如果变量是在一个代码块，比如for / if 中，那么这个变量的作用域就在该代码块
-
-
-
-![image-20220522141623066](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220522141623066.png)
-
-![image-20220522141955313](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220522141955313.png)
-
-
 
 ##### 字符串函数
 
@@ -2877,8 +2711,6 @@ func main() {
 
 8, 获取Unix时间戳和UnixNano 时间戳（可以获取随机数字）
 
- ![image-20220528130959781](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220528130959781.png)
-
 ```go
 func main() {
 	now := time.Now()
@@ -2927,8 +2759,6 @@ num1 := 100
 	*num2 = 100
 	fmt.Printf("num2的类型为%T, num2的值=%v, num2地址为%v\n num2指向的值为%v", num2, num2, &num2, *num2)
 ```
-
-![image-20220528134243486](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220528134243486.png)
 
 3，make : 用来分配内存，主要是用来分配引用类型，比如 channel ,map ,slice
 
@@ -3079,7 +2909,6 @@ var 数组名 [数组大小]数据类型  (    var arr [5]int    )
 
 赋初值  a[0] = 1
 
-![image-20220602121043585](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220602121043585.png)
 
 3，数组的各个元素的地址间隔是依据数组的类型决定，比如 int64-8, int32-4
 
@@ -3229,9 +3058,6 @@ func main() {
 	fmt.Println(arr)   // 11 22 33
 }
 ```
-
-![image-20220602131519736](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220602131519736.png)
-
 9)如想在其它函数中，去修改原来的数组，可以使用引用传递(指针方式)
 
 ```go
@@ -3246,13 +3072,9 @@ func main() {
 }
 ```
 
-![image-20220602132727934](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220602132727934.png)
-
 
 
 10） **长度是数组类型的一部分**，在传递函数参数时，需要考虑数组的长度
-
-![image-20220602133106374](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220602133106374.png)
 
 
 
@@ -3326,10 +3148,6 @@ slice[0]的地址=0xc0000c0068 slice[0]==22
 */
 ```
 
-![image-20220606224602287](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220606224602287.png)
-
-
-
 ### 使用切片的三种方式：
 
 方法一：定义一个切片，然后用切片去引用一个已经创建好的数组
@@ -3361,7 +3179,6 @@ the cap of slice is  10
 */
 ```
 
-![image-20220608151844591](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220608151844591.png)
 
 对上面代码的小结：
 
@@ -3378,8 +3195,6 @@ the cap of slice is  10
 
 
 方法一和方法二的区别
-
-![image-20220608152837841](C:\Users\COFFEE_Official\Desktop\笔记\image-20220608152837841.png)
 
 
 
@@ -3453,7 +3268,7 @@ arr= [10 100 30 40 50]
 
 7,改变切片的值，对应的切片和数组的值都会改变
 
-8, 用append内置函数，可以对切片进行动态追加![image-20220626192059104](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220626192059104.png)
+8, 用append内置函数，可以对切片进行动态追加
 
 ```go
 //用 append内置函数对切片进行动态追加
@@ -3481,7 +3296,7 @@ slice5= [100 200 300 100 200 300 400 50 600]
 
 4）slice重新引用到newArr
 
-5)注意newArr是在底层来维护的，程序员不可见.![image-20220626193441061](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220626193441061.png)
+5)注意newArr是在底层来维护的，程序员不可见.
 
 9，切片的拷贝操作
 
@@ -3570,7 +3385,6 @@ str := "hello@atguigu"
 
 2,string 和切片在内存的形式
 
-![image-20220627151215757](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220627151215757.png)
 
 3，string是不可变的，也就是说不能通过str[0] = z 的方式来修改字符串
 
@@ -3708,7 +3522,6 @@ func main() {
 
 **二分查找**
 
-![image-20220627171110478](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220627171110478.png)
 
 ```go
 func BinaryFind(arr *[6]int, leftIndex int, rightIndex int, findVal int) {
@@ -3770,15 +3583,9 @@ func main() {
 */
 ```
 
-![image-20220628155111349](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220628155111349.png)
-
-![image-20220628162717748](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220628162717748.png)
-
-
 
 第二种使用方式 ：直接初始化
 
-![image-20220628163116292](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220628163116292.png)
 
 ```go
 var arr [2][3]int = [2][3]int{{1, 2, 3}, {4, 5, 6}}
@@ -3837,12 +3644,6 @@ var a map[string]map[string][string]
 ```
 
 注意喵：声明是不会分配内存的，初始化需要make，分配内存后才能赋值和使用
-
-![image-20220903090203453](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220903090203453.png)
-
-![image-20220903101153041](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220903101153041.png)
-
-![image-20220903101209802](C:\Users\COFFEE_Official\AppData\Roaming\Typora\typora-user-images\image-20220903101209802.png)
 
 说明：
 
